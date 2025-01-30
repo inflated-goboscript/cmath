@@ -8,7 +8,7 @@
   You can use the standard library by adding these lines to goboscript.toml:
   ```toml
   [dependencies]
-  std = "https://github.com/FAReTek1/cmath@<the version you want to use>"
+  cmath = "https://github.com/FAReTek1/cmath@<the version you want to use>"
   ```
   
   Then, add this %include to your gs file:
