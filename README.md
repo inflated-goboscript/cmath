@@ -5,7 +5,7 @@
   ## Installation
   To use this, make sure to install [backpack](https://github.com/aspizu/backpack)
   
-  You can use the standard library by adding these lines to goboscript.toml:
+  You can use the cmath library by adding these lines to goboscript.toml:
   ```toml
   [dependencies]
   cmath = "https://github.com/FAReTek1/cmath@<the version you want to use>"
