@@ -5,7 +5,7 @@
 This is a complex math library which is built for [goboscript](https://github.com/aspizu/goboscript).
 It is designed to be used with [inflator](https://github.com/faretek1/inflator).
 
-> [!INFO]
+> [!NOTE]
 > This uses the `c_` prefix
 
 ## Credits
