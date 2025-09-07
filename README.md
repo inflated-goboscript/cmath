@@ -8,6 +8,9 @@ It is designed to be used with [inflator](https://github.com/faretek1/inflator).
 > [!NOTE]
 > This uses the `c_` prefix
 
+> [!IMPORTANT]
+> There is [an issue with some of the functions](https://github.com/inflated-goboscript/cmath/issues/2)
+
 ## Credits
 
 various things that i looked at 2+ years ago
