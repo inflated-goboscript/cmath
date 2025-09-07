@@ -43,9 +43,6 @@ jobs:
           pip install -U turbowarp-cli
           pip install -U inflator
 
-      - name: Install playwright
-        uses: docker://mcr.microsoft.com/playwright:v1.55.0-noble
-      
       - name: Inflate
         run: |
           ls -l
@@ -55,13 +52,16 @@ jobs:
           inflate install -r inflator.toml  # inflate test dependencies, e.g. assert
           inflate
           
+          
       - name: Build
         run: |
           cd test
           goboscript build
       
-      - name: Test with tw-cli
-        run: |
-          cd test
-          ls -l
-          twcli run ./test.sb3 -R
+      - name: Run with playwright
+        uses: docker://mcr.microsoft.com/playwright:v1.55.0-noble
+        with:
+          run: |
+            cd test
+            ls -l
+            twcli run ./test.sb3 -R
