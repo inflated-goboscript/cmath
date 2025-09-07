@@ -62,7 +62,9 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: mcr.microsoft.com/playwright:v1.55.0-noble
+            options: -v ${{ github.workspace }}:/
             run: |
               cd test
               ls -l
+              which python
               twcli run ./test.sb3 -R
