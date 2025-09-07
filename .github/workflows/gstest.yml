@@ -57,11 +57,12 @@ jobs:
         run: |
           cd test
           goboscript build
-      
+          
       - name: Run with playwright
-        uses: docker://mcr.microsoft.com/playwright:v1.55.0-noble
+        uses: addnab/docker-run-action@v3
         with:
-          run: |
-            cd test
-            ls -l
-            twcli run ./test.sb3 -R
+            image: mcr.microsoft.com/playwright:v1.55.0-noble
+            run: |
+              cd test
+              ls -l
+              twcli run ./test.sb3 -R
