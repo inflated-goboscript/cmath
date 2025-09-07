@@ -15,7 +15,7 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
 
@@ -43,6 +43,9 @@ jobs:
           pip install -U turbowarp-cli
           pip install -U inflator
 
+      - name: Install playwright
+        run: playwright install --with-deps chromium
+      
       - name: Inflate
         run: |
           ls -l
@@ -52,20 +55,13 @@ jobs:
           inflate install -r inflator.toml  # inflate test dependencies, e.g. assert
           inflate
           
-          
       - name: Build
         run: |
           cd test
           goboscript build
-          
-      - name: Run with playwright
-        uses: addnab/docker-run-action@v3
-        with:
-            image: mcr.microsoft.com/playwright:v1.55.0-noble
-            options: -v ${{ github.workspace }}
-            run: |
-              tree
-              cd home/runner/work/cmath/cmath/test
-              ls -l
-              which python
-              twcli run ./test.sb3 -R
+      
+      - name: Test with tw-cli
+        run: |
+          cd test
+          ls -l
+          twcli run ./test.sb3 -R
