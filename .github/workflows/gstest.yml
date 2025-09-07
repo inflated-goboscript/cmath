@@ -64,7 +64,8 @@ jobs:
             image: mcr.microsoft.com/playwright:v1.55.0-noble
             options: -v ${{ github.workspace }}
             run: |
-              cd test
+              tree
+              cd home/runner/work/cmath/cmath/test
               ls -l
               which python
               twcli run ./test.sb3 -R
