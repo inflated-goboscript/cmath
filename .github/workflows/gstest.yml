@@ -52,5 +52,5 @@ jobs:
       - name: Test with tw-cli
         run: |
           cd test
-          ls -l
+          dir
           twcli run ./test.sb3 -R
