@@ -14,5 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: goboscript-test
-        uses: inflated-goboscript/gstest@v0.0.0
+    
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.13"
+    
+    - name: Set up rust
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      
+    - name: goboscript-test
+      uses: inflated-goboscript/gstest@v0.0.1
