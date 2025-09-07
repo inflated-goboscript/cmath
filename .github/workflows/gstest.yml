@@ -43,7 +43,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install turbowarp-cli
           pip install inflator
-          playwright install --with-deps
+          playwright install  # --with-deps
       
       - name: Build package
         run: |
