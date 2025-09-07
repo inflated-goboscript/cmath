@@ -49,6 +49,7 @@ jobs:
           ls -l
           inflate install .
           cd test
+          inflate install -r inflator.toml
           inflate
           goboscript build
           
