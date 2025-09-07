@@ -14,7 +14,7 @@ on:
 
 jobs:
   tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +29,11 @@ jobs:
 
       - name: Set up goboscript
         run: |
+          export PATH="$PATH:~/.local/bin"
+          export PATH="$PATH:~/.cargo/bin"
+          if ! command -v cargo >/dev/null 2>&1; then
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+          fi
           cargo install --git https://github.com/aspizu/goboscript
         # above code is from:
         # run: curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh 
@@ -42,7 +47,7 @@ jobs:
       
       - name: Build package
         run: |
-          dir
+          ls -l
           inflate install .
           cd test
           inflate install -r inflator.toml
@@ -52,5 +57,5 @@ jobs:
       - name: Test with tw-cli
         run: |
           cd test
-          dir
+          ls -l
           twcli run ./test.sb3 -R
