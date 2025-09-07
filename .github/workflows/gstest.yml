@@ -1,4 +1,4 @@
-# This workflow will run pytest in the repository directory
+# This workflow will build and test the /test/ project with twcli, inflator, and goboscript.
 # This runs on pull request or on any push to the repository
 # based on https://www.youtube.com/watch?v=uFcXrWT4f80
 name: Run tests
