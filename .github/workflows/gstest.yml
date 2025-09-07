@@ -58,6 +58,7 @@ jobs:
         run: |
           cd /opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/twcli/
           ls -l
+          twcli -h
       
       - name: Test with tw-cli
         run: |
