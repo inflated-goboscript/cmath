@@ -42,7 +42,7 @@ jobs:
       
       - name: Build package
         run: |
-          ls -l
+          dir
           inflate install .
           cd test
           inflate install -r inflator.toml
