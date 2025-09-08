@@ -15,4 +15,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: inflated-goboscript/gstest@v0.0.4
+    - uses: inflated-goboscript/gstest@v0.1.0
