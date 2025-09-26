@@ -1,4 +1,4 @@
-# %include ../math
+%include inflator/math
 
 struct Complex {
     r=0,
@@ -8,7 +8,7 @@ struct Complex {
 %define Complex(_r, _i) (Complex{r:_r, i:_i})
 
 # Simple ops
-%define C_STR(s) "Complex(" & s.r & " + " & s.i & "i)"
+%define C_STR(s) "Complex(" & s.r & ", " & s.i & "i)"
 func c_str(Complex s) {return C_STR($s);}
 
 # Arithmetic operators
