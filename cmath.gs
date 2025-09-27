@@ -120,14 +120,14 @@ func c_cosh(Complex s) Complex {
 
 func c_asinh(Complex s) Complex {
     local Complex z0 = C_MUL($s, $s);
-    local Complex z1 = c_sqrt(Complex(1 + z0.r, z0.i));
+    local Complex z1 = c_sqrt(Complex(z0.r + 1, z0.i));
     local Complex z2 = C_ADD($s, z1);
     return C_LN(z2);
 }
 
 func c_acosh(Complex s) Complex {
     local Complex z0 = C_MUL($s, $s);
-    local Complex z1 = c_sqrt(Complex(-z0.r, z0.i));
+    local Complex z1 = c_sqrt(Complex(z0.r - 1, z0.i));
     local Complex z2 = C_ADD($s, z1);
     return C_LN(z2);
 }
